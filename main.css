@@ -1,0 +1,175 @@
+body{
+  background: #ddd;
+}
+.container {
+  display: grid;
+  grid-template-columns: 50% 20% 30%;
+  grid-gap: 2em;
+  padding: 4em;
+  grid-auto-rows: minmax(120px, auto);
+}
+.container > div {
+  background: #fff;
+}
+
+.box {
+  background: black;
+  width: 100px;
+  height: 100px;
+  position: relative;
+  animation-name: firstAnimation;
+  animation-duration: 6s;
+  animation-delay: 1s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+  /*   animation-direction: reverse */
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes firstAnimation {
+  0% {
+    background: white;
+    left: 0px;
+    top: 0px;
+    border-radius: 0 0 0 0;
+  }
+  25% {
+    background: red;
+    left: 300px;
+    top: 0px;
+    border-radius: 50% 0 0 0;
+  }
+  50% {
+    background: green;
+    left: 300px;
+    top: 100px;
+    border-radius: 50% 50% 0 0;
+  }
+  75% {
+    background: blue;
+    left: 0px;
+    top: 100px;
+    border-radius: 50% 50% 50% 0;
+  }
+  100% {
+    background: white;
+    left: 0px;
+    top: 0px;
+    border-radius: 50% 50% 50% 50%;
+  }
+}
+
+.box1 {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  transition-property: background, border-radius;
+  transition-duration: 2s;
+  /*   transition-delay: 1s, 2s; */
+  transition-timing-function: ease-in-out;
+}
+.box1:hover{
+  background: green;
+  border-radius: 50%;
+  transform: rotateY(180deg);
+}
+
+/*
+TRANSITIONAL PROPERTIES
+-Properties that have an identifiable halfway point
+
+background-color
+background-position
+border-color
+border-width
+border-spacing
+bottom
+color
+font-size
+font-weight
+height left
+letter-spacing
+line-height
+margin
+max-height
+max-width
+min-height
+min-width
+opacity
+outline-color
+outline-offset
+outline-width
+padding right
+text-indent
+text-shadow
+top
+vertical-align
+visibility
+width
+word-spacing
+z-index */
+
+
+.container2{
+  margin: 2% 0;
+  padding: 2em;
+  background: #2096d8;
+  color: white;
+  text-align: center;
+  font-family: Helvetica;
+}
+#showcase {
+  font-size: 40px;
+  height: 300px;
+}
+#showcase h1 {
+  animation-name: header;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+  position: relative;
+}
+@keyframes header{
+  0% {top: -50px;}
+  100% {top: 200px;}
+}
+
+.textContent {
+  font-size: 18px;
+}
+#content {
+  position: relative;
+  animation: content;
+  animation-duration: 3s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+}
+@keyframes content {
+  0% {left: -300px;}
+  100% {left: 0px;}
+}
+
+.btn {
+  margin: 2% 0;
+  text-decoration: none;
+  display: inline-block;
+  padding: 1rem 2rem;
+  color: white;
+  border: 1px solid white;
+  opacity: 0;
+  animation-name: button;
+  animation-delay: 3s;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  transition-property: transform;
+  transition-duration: 1s;
+}
+
+@keyframes button {
+  0% {opacity: 0}
+  100% {opacity: 1}
+}
+.btn:hover {
+  transform: rotateY(180deg);
+}
